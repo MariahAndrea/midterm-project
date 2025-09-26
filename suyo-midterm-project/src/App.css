@@ -1,0 +1,297 @@
+html, #root, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #0F0F0F;
+}
+
+@font-face {
+    font-family: AnotherDanger;
+    src: url("public/fonts/Another Danger - Demo.otf") format('opentype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Nightcore;
+    src: url("public/fonts/Nightcore Demo.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: StormGust;
+    src: url("public/fonts/Storm Gust.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: OldStyle;
+    src: url("public/fonts/OLDSH___.TTF") format('truetype');
+}
+
+.startScreen {
+    background-color: #0F0F0F;
+    background-image: url("public/images/startScreenBG.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 95.5vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.startContent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 50px;
+}
+
+.title h1{
+    font-family: 'Nightcore', sans-serif;
+    color: white;
+    font-size: 120px;
+    background-color: rgba(0, 0, 0, 0.275);
+    font-weight: normal;
+    margin: 0;
+}
+
+.inputArea input{
+    margin: 20px;
+    border: 1px solid white;
+    background-color: #0F0F0F;
+    height: 30px;
+    width: 300px;
+    padding: 5px 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+
+.inputArea button {
+    font-family: 'OldStyle', serif;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    width: 100px;
+    height: 30px;
+}
+
+.inputArea button:hover {
+    background-color: rgb(171, 0, 0);
+    color: white;
+}
+
+.storyScreen{
+    padding: 20px;
+    color: white;
+    height: 95.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.storyContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+    height: 60vh;
+    width: 120vh;
+    justify-content: space-between;
+}
+
+.storyDetails {
+    border: 1px solid white;
+    width: 95vh;
+    background-color: #0F0F0FE6;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 5px;
+}
+
+.itemList {
+    font-size: 18px;
+    margin: 5px 0 5px 15px;
+}
+
+.choices button{
+    width: 90vh;
+    height: 35px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.choices button:not(:disabled):hover{
+    background-color: rgb(119, 0, 0);
+    color: white;
+}
+
+.playerInfo{
+    border: 1px solid white;
+    width: 25vh;
+    background-color: #0F0F0FE6;
+    padding: 20px;
+}
+
+.playerName{
+    font-weight: bold !important;
+}
+
+.playerInfo h2{
+    font-weight: normal;
+    margin: 0 0 5px;
+    font-size: 20px;
+}
+
+.playerInfo span{
+    font-weight: bold;
+}
+
+.storyScreen button:disabled::after {
+    content: " (Requirement not met)🔒";
+    margin-left: 5px;
+}
+
+.victoryScreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    background-image: url("public/images/startScreenBG.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.victoryScreen h2{
+    font-weight: normal;
+    font-size: 100px;
+    margin: 5px;
+}
+
+.gameOverScreen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    background-image: url("public/images/gameOver.svg");
+    background-size: cover;
+}
+
+.gameOverScreen h2{
+    font-family: Nightcore;
+    font-weight: normal;
+    font-size: 100px;
+    color: red;
+    margin: 5px;
+}
+
+.gameOverScreen p, .victoryScreen{
+    font-size: 20px;    
+    margin: 0 0 80px
+}
+
+.gameOverScreen button, .victoryScreen button{
+    font-family: 'OldStyle', serif;
+    font-weight: bold;
+    background-color: white;
+    border: none;
+    width: 150px;
+    height: 35px;
+    margin: 10px;
+}
+
+.gameOverScreen button:hover, .victoryScreen button:hover{
+    background-color: rgb(101, 1, 1);
+    color: white;
+}
+
+.storyScreen.start {
+    background-image: url("public/images/startNodeBG.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.askCaptain {
+    background-image: url("public/images/askCaptain.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.oldChurch_entry {
+    background-image: url("public/images/oldChurchEntry.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.bellTower, .storyScreen.useGarlicOnWakwak, .storyScreen.fightWakwakNoGarlic {
+    background-image: url("public/images/bellTower.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.bellTower .storyDetails, .storyScreen.bellTower .playerInfo, 
+.storyScreen.useGarlicOnWakwak .storyDetails, .storyScreen.useGarlicOnWakwak .playerInfo,
+.storyScreen.fightWakwakNoGarlic .storyDetails, .storyScreen.fightWakwakNoGarlic .playerInfo{
+    background-color: #1d0000e6;   
+}
+.storyScreen.altar {
+    background-image: url("public/images/altar.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.investigateTiyanak, .storyScreen.tiyanakDamage {
+    background-image: url("public/images/investigateTiyanak.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.investigateTiyanak .storyDetails, .storyScreen.investigateTiyanak .playerInfo, 
+.storyScreen.tiyanakDamage .storyDetails, .storyScreen.tiyanakDamage .playerInfo {
+    background-color: #1d0000e6;   
+}
+
+.storyScreen.askAlbularyo {
+    background-image: url("public/images/askAlbularyo.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.riceFields_entry {
+    background-image: url("public/images/riceFields.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.baleteTree_approach {
+    background-image: url("public/images/baleteTree.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.finalFight_direct {
+    background-image: url("public/images/finalFight_direct.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.finalFight_search {
+    background-image: url("public/images/finalFight.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.storyScreen.finalFight_search .storyDetails, .storyScreen.finalFight_search .playerInfo,
+.storyScreen.finalFight_direct .storyDetails, .storyScreen.finalFight_direct .playerInfo {
+    background-color: #1d0000e6;   
+}

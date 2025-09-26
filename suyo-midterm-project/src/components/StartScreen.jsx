@@ -10,15 +10,24 @@ function handleStart(){
 }
 
 return (
-    <div>
-        <h1>Aswang Hunter</h1>
-        <input 
-            type = "text"
-            placeholder = "Enter your name"
-            value = {name}
-            onChange = {(e) => setName(e.target.value)}
-        />
-        <button onClick={handleStart}>Start</button>
+    <div className="startScreen">
+        <div className="startContent"> 
+            <div className="title">
+                <h1>Aswang Hunter</h1>
+            </div>
+            <div className="inputArea">
+                <input 
+                    type = "text"
+                    placeholder = "Enter name"
+                    value = {name}
+                    onChange = {(e) => setName(e.target.value)}
+                    />
+                <div className="button">
+                    <button onClick={handleStart}>START</button>
+                </div>
+            </div>
+            
+        </div>
     </div>
 );
 }
