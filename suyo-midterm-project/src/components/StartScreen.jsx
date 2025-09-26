@@ -9,6 +9,12 @@ function handleStart(){
     setPlayer((p) => ({...p, name}));
 }
 
+function handleKeyDown(e){
+    if (e.key === "Enter") { 
+        handleStart();
+    }
+}
+
 return (
     <div className="startScreen">
         <div className="startContent"> 
@@ -21,6 +27,7 @@ return (
                     placeholder = "Enter name"
                     value = {name}
                     onChange = {(e) => setName(e.target.value)}
+                    onKeyDown={handleKeyDown}
                     />
                 <div className="button">
                     <button onClick={handleStart}>START</button>
