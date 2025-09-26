@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { GameContext } from './store/GameContext';
 import StartScreen from './components/StartScreen';
 import StoryDisplay from './components/StoryDisplay';
+import './App.css';
 
 export default function App() {
   const {player} = useContext(GameContext);

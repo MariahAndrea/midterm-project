@@ -1,14 +1,14 @@
-import React, {useState, useEffect, useContext, createContext} from 'react';
+import React, {useState, useEffect, useCallback, createContext} from 'react';
 
 export const GameContext = createContext();
 
 export function GameProvider({children}) {
 
+    //loads progress from localStorage
     const savedState = JSON.parse(localStorage.getItem("gameState"));
 
     const[player, setPlayer] = useState(
         savedState?.player || { name: "", hp: 100, inventory: []}
-        
     );
 
     const [story, setStory] = useState(null);
@@ -16,18 +16,30 @@ export function GameProvider({children}) {
     const [gameOver, setGameOver] = useState(savedState?.gameOver || false);
     const [victory, setVictory] = useState(savedState?.victory || false);
 
+    //loads json file
     useEffect(() => {
         fetch("files/story.json")
         .then((res) => res.json())
         .then((data) => setStory(data));
     }, []);
 
+    //saves progress to local storage
     useEffect(() => {
         const gameState = { player, currentNode, gameOver, victory };
         localStorage.setItem("gameState", JSON.stringify(gameState));
     }, [player, currentNode, gameOver, victory]);
 
-    function makeChoice(choice) {
+    //checks req item 
+    function hasRequiredItems(choice, inventory){
+        if (!choice.requires) return true;
+        if (Array.isArray(choice.requires)) {
+            return choice.requires.every((item) => inventory.includes(item));
+        }
+        return inventory.includes(choice.requires);
+    }
+
+    const makeChoice = useCallback((choice) => {
+
         const nextNode = story[choice.to];
         
         if (nextNode.onArrive){
@@ -53,7 +65,7 @@ export function GameProvider({children}) {
         }
 
         if (nextNode.isEnding){
-            if (nextNode.type === "goodEnding"){
+            if (choice.to === "goodEnding"){
                 setVictory(true);
             }
             else {
@@ -62,17 +74,16 @@ export function GameProvider({children}) {
         }
 
         setCurrentNode(choice.to);
-    }
+    }, [story]);
 
-    function restartGame(){
+    const restartGame = useCallback(() => {
         setPlayer({ name: "", hp: 100, inventory: [] });
         setCurrentNode("start");
         setGameOver(false);
         setVictory(false);
         localStorage.removeItem("gameState");
         console.log("Game restarted");
-    }
-
+    }, []);
 
     return(
         <GameContext.Provider
@@ -84,7 +95,8 @@ export function GameProvider({children}) {
                 makeChoice,
                 gameOver,
                 victory,
-                restartGame
+                restartGame,
+                hasRequiredItems
             }}
         >
             {children}
