@@ -7,28 +7,28 @@ html, #root, body {
 
 @font-face {
     font-family: AnotherDanger;
-    src: url("public/fonts/Another Danger - Demo.otf") format('opentype');
+    src: url("/fonts/Another Danger - Demo.otf") format('opentype');
     font-weight: normal;
 }
 
 @font-face {
     font-family: Nightcore;
-    src: url("public/fonts/Nightcore Demo.ttf") format('truetype');
+    src: url("/fonts/Nightcore Demo.ttf") format('truetype');
 }
 
 @font-face {
     font-family: StormGust;
-    src: url("public/fonts/Storm Gust.ttf") format('truetype');
+    src: url("/fonts/Storm Gust.ttf") format('truetype');
 }
 
 @font-face {
     font-family: OldStyle;
-    src: url("public/fonts/OLDSH___.TTF") format('truetype');
+    src: url("/fonts/OLDSH___.TTF") format('truetype');
 }
 
 .startScreen {
     background-color: #0F0F0F;
-    background-image: url("public/images/startScreenBG.svg");
+    background-image: url("/images/startScreenBG.svg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 95.5vh;
@@ -47,7 +47,7 @@ html, #root, body {
 
 .title h1{
     font-family: 'Nightcore', sans-serif;
-    color: white;
+    color: rgb(255, 0, 0);
     font-size: 120px;
     background-color: rgba(0, 0, 0, 0.275);
     font-weight: normal;
@@ -63,6 +63,7 @@ html, #root, body {
     padding: 5px 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
+    border-radius: 2px;
 }
 
 .inputArea button {
@@ -72,6 +73,7 @@ html, #root, body {
     border: none;
     width: 100px;
     height: 30px;
+    border-radius: 2px;
 }
 
 .inputArea button:hover {
@@ -92,15 +94,15 @@ html, #root, body {
     display: flex;
     flex-direction: row;
     padding: 40px;
-    height: 60vh;
-    width: 120vh;
+    height: 50vh;
+    width: 110vh;
     justify-content: space-between;
 }
 
 .storyDetails {
     border: 1px solid white;
-    width: 95vh;
-    background-color: #0F0F0FE6;
+    width: 80vh;
+    background-color: #0F0F0FB3;
     padding: 5px 20px;
     display: flex;
     flex-direction: column;
@@ -121,7 +123,7 @@ ul{
 }
 
 .choices button{
-    width: 90vh;
+    width: 78vh;
     height: 35px;
     margin-bottom: 10px;
     font-size: 15px;
@@ -135,7 +137,7 @@ ul{
 .playerInfo{
     border: 1px solid white;
     width: 25vh;
-    background-color: #0F0F0FE6;
+    background-color: #0F0F0FB3;
     padding: 20px;
 }
 
@@ -165,7 +167,7 @@ ul{
     justify-content: center;
     height: 100vh;
     color: white;
-    background-image: url("public/images/startScreenBG.svg");
+    background-image: url("/images/startScreenBG.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -183,7 +185,7 @@ ul{
     justify-content: center;
     height: 100vh;
     color: white;
-    background-image: url("public/images/gameOver.svg");
+    background-image: url("/images/gameOver.svg");
     background-size: cover;
 }
 
@@ -216,25 +218,25 @@ ul{
 }
 
 .storyScreen.start {
-    background-image: url("public/images/startNodeBG.svg");
+    background-image: url("/images/startNodeBG.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .storyScreen.askCaptain {
-    background-image: url("public/images/askCaptain.svg");
+    background-image: url("/images/askCaptain.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .storyScreen.oldChurch_entry {
-    background-image: url("public/images/oldChurchEntry.svg");
+    background-image: url("/images/oldChurchEntry.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .storyScreen.bellTower, .storyScreen.useGarlicOnWakwak, .storyScreen.fightWakwakNoGarlic {
-    background-image: url("public/images/bellTower.svg");
+    background-image: url("/images/bellTower.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -245,53 +247,53 @@ ul{
     background-color: #1d0000e6;   
 }
 .storyScreen.altar {
-    background-image: url("public/images/altar.svg");
+    background-image: url("/images/altar.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .storyScreen.investigateTiyanak, .storyScreen.tiyanakDamage {
-    background-image: url("public/images/investigateTiyanak.svg");
+    background-image: url("/images/investigateTiyanak.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .storyScreen.investigateTiyanak .storyDetails, .storyScreen.investigateTiyanak .playerInfo, 
 .storyScreen.tiyanakDamage .storyDetails, .storyScreen.tiyanakDamage .playerInfo {
-    background-color: #1d0000e6;   
+    background-color: #1d0000B3;   
 }
 
 .storyScreen.askAlbularyo {
-    background-image: url("public/images/askAlbularyo.svg");
+    background-image: url("/images/askAlbularyo.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .storyScreen.riceFields_entry {
-    background-image: url("public/images/riceFields.svg");
+    background-image: url("/images/riceFields.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .storyScreen.baleteTree_approach {
-    background-image: url("public/images/baleteTree.svg");
+    background-image: url("/images/baleteTree.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .storyScreen.finalFight_direct {
-    background-image: url("public/images/finalFight_direct.svg");
+    background-image: url("/images/finalFight_direct.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .storyScreen.finalFight_search {
-    background-image: url("public/images/finalFight.svg");
+    background-image: url("/images/finalFight.svg");
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .storyScreen.finalFight_search .storyDetails, .storyScreen.finalFight_search .playerInfo,
 .storyScreen.finalFight_direct .storyDetails, .storyScreen.finalFight_direct .playerInfo {
-    background-color: #1d0000e6;   
+    background-color: #1d0000B3;   
 }
